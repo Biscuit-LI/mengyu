@@ -1,0 +1,17 @@
+{
+  "name": "梦遇",
+  "short_name": "梦遇",
+  "description": "每个人的人生，都是别人的一个梦",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f1a",
+  "theme_color": "#0f0f1a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
