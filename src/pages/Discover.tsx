@@ -3,7 +3,6 @@ import { Search, X } from 'lucide-react';
 import { useStore } from '@/store/useStore';
 import { DreamCard } from '@/components/DreamCard';
 import { MoodTag } from '@/components/MoodTag';
-import { GalaxyBackground } from '@/components/GalaxyBackground';
 import type { MoodTag as MoodTagType } from '@/types';
 
 const moods: MoodTagType[] = ['chasing', 'living', 'daily', 'venting', 'lost', 'healing'];
@@ -50,8 +49,6 @@ export function Discover({ onViewPost }: DiscoverProps) {
 
   return (
     <div className="min-h-screen pb-20">
-      <GalaxyBackground />
-      
       <div className="relative z-10 pt-12 px-3">
         <div className="glass-card rounded-xl p-2 mb-4 flex items-center gap-2">
           <Search className="w-5 h-5 text-muted" />

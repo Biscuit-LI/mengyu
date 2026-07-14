@@ -4,7 +4,6 @@ import { Settings, RefreshCw, Eye, Smartphone } from 'lucide-react';
 import { useStore } from '@/store/useStore';
 import { Avatar } from '@/components/Avatar';
 import { MoodTag } from '@/components/MoodTag';
-import { GalaxyBackground } from '@/components/GalaxyBackground';
 import { EmptyState } from '@/components/EmptyState';
 import { generateNickname } from '@/utils/anonymous';
 import { getRandomConstellation } from '@/utils/constellation';
@@ -51,8 +50,6 @@ export function Profile({ onViewPost }: ProfileProps) {
 
   return (
     <div className="min-h-screen pb-24">
-      <GalaxyBackground />
-      
       <div className="relative z-10 pt-12 px-4">
         {activeTab === 'profile' && (
           <div className="space-y-3">
@@ -123,9 +120,9 @@ export function Profile({ onViewPost }: ProfileProps) {
               <button
                 onClick={() => {
                   if (window !== window.parent) {
-                    window.parent.location.href = '/';
+                    window.parent.location.href = '/app.html';
                   } else {
-                    window.location.href = '/demo.html';
+                    window.location.href = '/';
                   }
                 }}
                 className="w-full flex items-center gap-2 text-left"

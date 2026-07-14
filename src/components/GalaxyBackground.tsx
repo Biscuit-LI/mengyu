@@ -45,15 +45,16 @@ export function GalaxyBackground({ className = '' }: GalaxyBackgroundProps) {
 
     const isLight = theme === 'light';
 
+    const getDimensions = () => {
+      const w = window.innerWidth || document.documentElement.clientWidth || 375;
+      const h = window.innerHeight || document.documentElement.clientHeight || 812;
+      return { w: Math.max(w, 1), h: Math.max(h, 1) };
+    };
+
     const resize = () => {
-      const container = canvas.parentElement;
-      if (container) {
-        canvas.width = container.clientWidth || window.innerWidth;
-        canvas.height = container.clientHeight || window.innerHeight;
-      } else {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
+      const { w, h } = getDimensions();
+      canvas.width = w;
+      canvas.height = h;
       initStars();
     };
 
@@ -177,15 +178,33 @@ export function GalaxyBackground({ className = '' }: GalaxyBackgroundProps) {
       animationId = requestAnimationFrame(drawStars);
     };
 
+    // Initial setup
     resize();
     drawStars();
+
+    // Delayed re-resize to handle iframe loading timing
+    const delayedResize1 = setTimeout(() => {
+      resize();
+    }, 100);
+
+    const delayedResize2 = setTimeout(() => {
+      resize();
+    }, 500);
+
     window.addEventListener('resize', resize);
 
     return () => {
       window.removeEventListener('resize', resize);
+      clearTimeout(delayedResize1);
+      clearTimeout(delayedResize2);
       cancelAnimationFrame(animationId);
     };
   }, [theme]);
 
-  return <canvas ref={canvasRef} className={`fixed inset-0 z-0 pointer-events-none ${className}`} />;
+  return (
+    <>
+      <div className={`fixed inset-0 z-0 pointer-events-none ${className}`} style={{ backgroundColor: theme === 'light' ? '#fdfbf7' : '#0f0f1a' }} />
+      <canvas ref={canvasRef} className={`fixed inset-0 z-0 pointer-events-none ${className}`} />
+    </>
+  );
 }

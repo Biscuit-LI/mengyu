@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { ArrowLeft, Moon, Sun, RefreshCw, Check, Star, Info, BookOpen, MessageCircle, Heart, Bookmark } from 'lucide-react';
 import { useStore } from '@/store/useStore';
 import { Avatar } from '@/components/Avatar';
-import { GalaxyBackground } from '@/components/GalaxyBackground';
 import { generateNickname } from '@/utils/anonymous';
 import { CONSTELLATIONS } from '@/utils/constellation';
 
@@ -58,8 +57,6 @@ export function Settings({ onClose }: SettingsProps) {
 
   return (
     <div className="fixed inset-0 z-50 bg-bg overflow-y-auto">
-      <GalaxyBackground />
-      
       <div className="relative z-10 min-h-screen">
         <div className="pt-12 px-4">
           <div className="flex items-center justify-between">

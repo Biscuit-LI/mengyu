@@ -1,6 +1,5 @@
 import { useStore } from '@/store/useStore';
 import { DreamCard } from '@/components/DreamCard';
-import { GalaxyBackground } from '@/components/GalaxyBackground';
 import { SkeletonCard } from '@/components/Skeleton';
 
 interface HomeProps {
@@ -22,7 +21,6 @@ export function Home({ onViewPost }: HomeProps) {
   if (posts.length === 0) {
     return (
       <div className="min-h-screen pb-20">
-        <GalaxyBackground />
         <div className="relative z-10 pt-11 px-3 py-3 space-y-3">
           {Array.from({ length: 3 }).map((_, i) => (
             <SkeletonCard key={i} />
@@ -34,8 +32,6 @@ export function Home({ onViewPost }: HomeProps) {
 
   return (
     <div className="min-h-screen pb-20">
-      <GalaxyBackground />
-      
       <div className="relative z-10 pt-11">
         <div className="z-20 backdrop-blur-md bg-bg/80 border-b border-rule">
           <div className="px-4 py-3 flex items-center justify-between">

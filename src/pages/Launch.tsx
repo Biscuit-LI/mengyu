@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { GalaxyBackground } from '@/components/GalaxyBackground';
 import { getConstellationEmoji, CONSTELLATIONS } from '@/utils/constellation';
 
 interface LaunchProps {
@@ -40,25 +39,29 @@ export function Launch({ onComplete }: LaunchProps) {
 
   return (
     <div 
-      className="fixed inset-0 bg-bg z-50 flex flex-col items-center justify-center"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       onClick={() => !isAnimating && onComplete()}
     >
-      <GalaxyBackground />
-      
       <div className={`transition-opacity duration-500 ${isAnimating ? 'opacity-100' : 'opacity-0'}`}>
         <div className="text-center px-6 relative">
           <div 
             className="absolute -top-8 left-1/2 -translate-x-1/2 flex items-center gap-2"
-            style={{ animation: 'fadeInUp 1s 0.2s forwards', opacity: 0 }}
+            style={{ 
+              animation: 'fadeInUp 1s 0.2s forwards', 
+              opacity: 1 
+            }}
           >
             <span className="text-accent/60 text-xs tracking-[0.2em] uppercase">MengYu</span>
           </div>
           
           <div 
             className="relative w-24 h-24 mx-auto mb-6"
-            style={{ animation: 'fadeInUp 1s 0.5s forwards', opacity: 0 }}
+            style={{ 
+              animation: 'fadeInUp 1s 0.5s forwards', 
+              opacity: 1 
+            }}
           >
             <div className={`absolute inset-0 rounded-full border-2 border-accent/30 ${isPressed ? 'scale-95' : 'scale-100'} transition-transform duration-300`} />
             <div className={`absolute inset-2 rounded-full border border-accent/20 ${isPressed ? 'scale-95' : 'scale-100'} transition-transform duration-300`} />
@@ -78,7 +81,7 @@ export function Launch({ onComplete }: LaunchProps) {
             className="font-serif text-4xl md:text-6xl font-bold mb-4 leading-tight"
             style={{ 
               animation: 'fadeInUp 1.2s 0.8s forwards', 
-              opacity: 0,
+              opacity: 1,
               textShadow: '0 0 60px rgba(240,194,127,0.15)',
               color: document.documentElement.getAttribute('data-theme') === 'light' ? '#0f172a' : '#ffffff'
             }}
@@ -88,7 +91,10 @@ export function Launch({ onComplete }: LaunchProps) {
           
           <p 
             className="font-serif text-base md:text-lg text-accent/80 font-light"
-            style={{ animation: 'fadeInUp 1.2s 1.2s forwards', opacity: 0 }}
+            style={{ 
+              animation: 'fadeInUp 1.2s 1.2s forwards', 
+              opacity: 1 
+            }}
           >
             每个人的人生，都是别人的一个梦
           </p>

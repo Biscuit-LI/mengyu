@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 import { Wand2, Send, MessageCircle, FileText, Image, Mic } from 'lucide-react';
 import { useStore } from '@/store/useStore';
 import { MoodTag } from '@/components/MoodTag';
-import { GalaxyBackground } from '@/components/GalaxyBackground';
 import type { MoodTag as MoodTagType, PostType, DreamPost } from '@/types';
 
 const moods: MoodTagType[] = ['chasing', 'living', 'daily', 'venting', 'lost', 'healing'];
@@ -95,8 +94,6 @@ export function Publish({ onViewPost }: PublishProps) {
 
   return (
     <div className="min-h-screen pb-20">
-      <GalaxyBackground />
-      
       <div className="relative z-10 pt-12 px-4">
         <div className="glass-card rounded-xl p-2 mb-2 flex gap-1">
           <button

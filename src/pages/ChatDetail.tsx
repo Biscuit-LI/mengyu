@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, Send, MoreVertical } from 'lucide-react';
 import { useStore } from '@/store/useStore';
 import { Avatar } from '@/components/Avatar';
-import { GalaxyBackground } from '@/components/GalaxyBackground';
 import type { ChatSession } from '@/types';
 
 interface ChatDetailProps {
@@ -72,8 +71,6 @@ export function ChatDetail({ session, onClose }: ChatDetailProps) {
 
   return (
     <div className={`fixed inset-0 z-[100] flex flex-col ${bgColor} pt-11`}>
-      <GalaxyBackground />
-      
       <div className={`backdrop-blur-md border-b flex-shrink-0 ${isDark ? 'bg-[rgba(15,15,26,0.95)] border-white/10' : 'bg-card-bg/95 border-rule'}`}>
         <div className="flex items-center justify-between h-10 px-3">
           <button

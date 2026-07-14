@@ -3,7 +3,6 @@ import { Heart, Bookmark, Send, ArrowLeft, MessageCircle, SendHorizontal, X } fr
 import { useStore } from '@/store/useStore';
 import { Avatar } from '@/components/Avatar';
 import { MoodTag } from '@/components/MoodTag';
-import { GalaxyBackground } from '@/components/GalaxyBackground';
 import type { DreamPost } from '@/types';
 
 interface StoryDetailProps {
@@ -89,8 +88,6 @@ export function StoryDetail({ post, onClose }: StoryDetailProps) {
 
   return (
     <div className={`fixed inset-0 z-[100] overflow-y-auto ${isDark ? 'bg-[#0f0f1a]' : 'bg-bg'}`}>
-      <GalaxyBackground />
-      
       <div className="relative z-10 pb-24 pt-11">
         <div className={`backdrop-blur-md border-b ${isDark ? 'bg-[rgba(15,15,26,0.95)] border-white/10' : 'bg-card-bg/95 border-rule'}`}>
           <div className="flex items-center justify-between h-12 px-4">

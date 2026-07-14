@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 import { Search, Send, Heart, HelpCircle, Share2, MessageCircle } from 'lucide-react';
 import { useStore } from '@/store/useStore';
 import { Avatar } from '@/components/Avatar';
-import { GalaxyBackground } from '@/components/GalaxyBackground';
 import type { MessageType, ChatSession } from '@/types';
 import { MESSAGE_TYPE_CONFIG } from '@/types';
 
@@ -86,8 +85,6 @@ export function Message({ onViewChat }: MessageProps) {
 
   return (
     <div className="min-h-screen pb-20">
-      <GalaxyBackground />
-      
       <div className="relative z-10 pt-12 px-4">
         <div className={`rounded-xl p-3 mb-3 border ${cardBg}`}>
           <div className="flex items-center gap-2">

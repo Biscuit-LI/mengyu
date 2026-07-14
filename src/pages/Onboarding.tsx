@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { GalaxyBackground } from '@/components/GalaxyBackground';
 import { ChevronRight, Sparkles, MessageCircle, Compass } from 'lucide-react';
 
 interface OnboardingProps {
@@ -39,9 +38,7 @@ export function Onboarding({ onComplete }: OnboardingProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-bg z-50 flex flex-col">
-      <GalaxyBackground />
-      
+    <div className="fixed inset-0 z-50 flex flex-col">
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6">
         {slides.map((slide, index) => (
           <div
